@@ -1,0 +1,13 @@
+# Python-specific ignore rules
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+programs/*.hex
+*.hex
+
+
+.vscode/
+.idea/
+.DS_Store
