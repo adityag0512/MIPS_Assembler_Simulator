@@ -187,13 +187,13 @@ class SIMCore:
             elif funct == 12: # syscall
                 v0 = self.cpu.registers[2]
                 if v0 == 1: # print integer
-                    print(to_signed_32(self.cpu.registers[4]), end="", flush=True)
+                    print("Program Output:", to_signed_32(self.cpu.registers[4]), end="", flush=True)
                 elif v0 == 10: # exit cleanly
                     self.cpu.pc += 4
                     print("\n[Syscall] Program terminated normally.")
                     return False
                 elif v0 == 11: # print character
-                    print(chr(self.cpu.registers[4] & 0xFF), end="", flush=True)
+                    print("Program Output:", chr(self.cpu.registers[4] & 0xFF), end="", flush=True)
                 else:
                     print(f"\n[!] RUNTIME ERROR: Unsupported Syscall {v0}")
                     return False
